@@ -12,8 +12,11 @@ option(USE_GLES1 "Set to ON to force usage of the OpenGLES v1 renderer" ${USE_GL
 # OpenGL library preference (https://cmake.org/cmake/help/git-stage/policy/CMP0072.html)
 # Set it to OLD to appease older proprietary drivers without libglvnd support
 if(POLICY CMP0072)
-   cmake_policy(SET CMP0072 OLD)
+   cmake_policy(SET CMP0072 NEW)
 endif()
+
+# Force OpenGL ES
+set(GLES ON) 
 
 project(emulationstation-all)
 
@@ -87,11 +90,10 @@ else()
 endif()
 
 find_package(Freetype REQUIRED)
-find_package(FreeImage REQUIRED)
 find_package(SDL2 REQUIRED)
-find_package(CURL REQUIRED)
-find_package(VLC REQUIRED)
-find_package(RapidJSON REQUIRED)
+
+set(CURL_STATICLIB ON CACHE BOOL "") 
+set(BUILD_CURL_EXE OFF CACHE BOOL "") 
 
 #add libCEC support
 if(CEC)
@@ -148,17 +150,17 @@ endif()
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
 set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
 
-
 #-------------------------------------------------------------------------------
 #add include directories
 set(COMMON_INCLUDE_DIRS
     ${FREETYPE_INCLUDE_DIRS}
-    ${FreeImage_INCLUDE_DIRS}
     ${SDL2_INCLUDE_DIR}
-    ${CURL_INCLUDE_DIR}
     ${VLC_INCLUDE_DIR}
     ${RAPIDJSON_INCLUDE_DIRS}
     ${CMAKE_CURRENT_SOURCE_DIR}/external
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/FreeImage/Source
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/curl/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/external/rapidjson/include
     ${CMAKE_CURRENT_SOURCE_DIR}/es-core/src
 )
 
@@ -191,10 +193,10 @@ endif()
 
 set(COMMON_LIBRARIES
     ${FREETYPE_LIBRARIES}
-    ${FreeImage_LIBRARIES}
     ${SDL2_LIBRARY}
-    ${CURL_LIBRARIES}
     ${VLC_LIBRARIES}
+    CURL::libcurl
+    FreeImage
     pugixml
     nanosvg
 )

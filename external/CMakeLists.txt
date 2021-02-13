@@ -3,3 +3,6 @@
 
 add_subdirectory("nanosvg")
 add_subdirectory("pugixml")
+add_subdirectory("FreeImage")
+add_subdirectory("rapidjson")
+add_subdirectory("curl")

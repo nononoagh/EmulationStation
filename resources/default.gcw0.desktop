@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=EmulationStation
+Comment=EmulationStation port for OpenDingux
+Exec=emulationstation
+Type=Application
+Icon=icon
+StartupNotify=true
+Terminal=true
+Categories=emulators;

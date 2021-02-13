@@ -32,10 +32,6 @@ GridGameListView::GridGameListView(Window* window, FileData* root) :
 #ifdef _RPI_
 	if (Settings::getInstance()->getBool("VideoOmxPlayer"))
 		mVideo = new VideoPlayerComponent(window, "");
-	else
-		mVideo = new VideoVlcComponent(window, getTitlePath());
-#else
-	mVideo = new VideoVlcComponent(window, getTitlePath());
 #endif
 
 	mGrid.setPosition(mSize.x() * 0.1f, mSize.y() * 0.1f);

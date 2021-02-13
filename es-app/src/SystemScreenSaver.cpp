@@ -90,10 +90,6 @@ void SystemScreenSaver::startScreenSaver()
 			// Create the correct type of video component
 			if (Settings::getInstance()->getBool("ScreenSaverOmxPlayer"))
 				mVideoScreensaver = new VideoPlayerComponent(mWindow, getTitlePath());
-			else
-				mVideoScreensaver = new VideoVlcComponent(mWindow, getTitlePath());
-#else
-			mVideoScreensaver = new VideoVlcComponent(mWindow, getTitlePath());
 #endif
 
 			mVideoScreensaver->topWindow(true);

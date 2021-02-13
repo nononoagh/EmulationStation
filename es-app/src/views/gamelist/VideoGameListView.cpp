@@ -33,10 +33,6 @@ VideoGameListView::VideoGameListView(Window* window, FileData* root) :
 #ifdef _RPI_
 	if (Settings::getInstance()->getBool("VideoOmxPlayer"))
 		mVideo = new VideoPlayerComponent(window, "");
-	else
-		mVideo = new VideoVlcComponent(window, getTitlePath());
-#else
-	mVideo = new VideoVlcComponent(window, getTitlePath());
 #endif
 
 	mList.setPosition(mSize.x() * (0.50f + padding), mList.getPosition().y());

@@ -43,3 +43,10 @@ CPackSourceConfig.cmake
 
 # VSCode
 .vscode/
+
+# curl
+bin/
+
+# OpenDingux
+emulationstation.opk
+opk/

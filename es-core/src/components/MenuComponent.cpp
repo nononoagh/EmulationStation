@@ -13,7 +13,7 @@ MenuComponent::MenuComponent(Window* window, const char* title, const std::share
 	addChild(&mBackground);
 	addChild(&mGrid);
 
-	mBackground.setImagePath(":/frame.png");
+	mBackground.setImagePath("./frame.png");
 
 	// set up title
 	mTitle = std::make_shared<TextComponent>(mWindow);
@@ -127,7 +127,7 @@ std::shared_ptr<ComponentGrid> makeButtonGrid(Window* window, const std::vector<
 std::shared_ptr<ImageComponent> makeArrow(Window* window)
 {
 	auto bracket = std::make_shared<ImageComponent>(window);
-	bracket->setImage(":/arrow.svg");
+	bracket->setImage("./arrow.svg");
 	bracket->setResize(0, Math::round(Font::get(FONT_SIZE_MEDIUM)->getLetterHeight()));
 	return bracket;
 }

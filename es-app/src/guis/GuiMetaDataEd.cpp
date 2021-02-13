@@ -23,7 +23,7 @@ GuiMetaDataEd::GuiMetaDataEd(Window* window, MetaDataList* md, const std::vector
 	const std::string& /*header*/, std::function<void()> saveCallback, std::function<void()> deleteFunc) : GuiComponent(window),
 	mScraperParams(scraperParams),
 
-	mBackground(window, ":/frame.png"),
+	mBackground(window, "./frame.png"),
 	mGrid(window, Vector2i(1, 3)),
 
 	mMetaDataDecl(mdd),
@@ -117,7 +117,7 @@ GuiMetaDataEd::GuiMetaDataEd(Window* window, MetaDataList* md, const std::vector
 				row.addElement(spacer, false);
 
 				auto bracket = std::make_shared<ImageComponent>(mWindow);
-				bracket->setImage(":/arrow.svg");
+				bracket->setImage("./arrow.svg");
 				bracket->setResize(Vector2f(0, lbl->getFont()->getLetterHeight()));
 				row.addElement(bracket, false);
 

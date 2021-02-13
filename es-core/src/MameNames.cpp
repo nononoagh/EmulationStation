@@ -36,7 +36,7 @@ MameNames* MameNames::getInstance()
 
 MameNames::MameNames()
 {
-	std::string xmlpath = ResourceManager::getInstance()->getResourcePath(":/mamenames.xml");
+	std::string xmlpath = ResourceManager::getInstance()->getResourcePath("./mamenames.xml");
 
 	if(!Utils::FileSystem::exists(xmlpath))
 		return;
@@ -59,7 +59,7 @@ MameNames::MameNames()
 	}
 
 	// Read bios
-	xmlpath = ResourceManager::getInstance()->getResourcePath(":/mamebioses.xml");
+	xmlpath = ResourceManager::getInstance()->getResourcePath("./mamebioses.xml");
 
 	if(!Utils::FileSystem::exists(xmlpath))
 		return;
@@ -81,7 +81,7 @@ MameNames::MameNames()
 	}
 
 	// Read devices
-	xmlpath = ResourceManager::getInstance()->getResourcePath(":/mamedevices.xml");
+	xmlpath = ResourceManager::getInstance()->getResourcePath("./mamedevices.xml");
 
 	if(!Utils::FileSystem::exists(xmlpath))
 		return;

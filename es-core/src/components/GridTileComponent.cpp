@@ -4,12 +4,12 @@
 #include "resources/TextureResource.h"
 #include "ThemeData.h"
 
-GridTileComponent::GridTileComponent(Window* window) : GuiComponent(window), mBackground(window, ":/frame.png")
+GridTileComponent::GridTileComponent(Window* window) : GuiComponent(window), mBackground(window, "./frame.png")
 {
 	mDefaultProperties.mSize = getDefaultTileSize();
 	mDefaultProperties.mPadding = Vector2f(16.0f, 16.0f);
 	mDefaultProperties.mImageColor = 0xAAAAAABB;
-	mDefaultProperties.mBackgroundImage = ":/frame.png";
+	mDefaultProperties.mBackgroundImage = "./frame.png";
 	mDefaultProperties.mBackgroundCornerSize = Vector2f(16 ,16);
 	mDefaultProperties.mBackgroundCenterColor = 0xAAAAEEFF;
 	mDefaultProperties.mBackgroundEdgeColor = 0xAAAAEEFF;

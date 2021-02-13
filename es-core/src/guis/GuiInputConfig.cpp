@@ -18,31 +18,31 @@ struct InputConfigStructure
 static const int inputCount = 25;
 static const InputConfigStructure GUI_INPUT_CONFIG_LIST[inputCount] =
 {
-	{ "Up",               false, "D-PAD UP",           ":/help/dpad_up.svg" },
-	{ "Down",             false, "D-PAD DOWN",         ":/help/dpad_down.svg" },
-	{ "Left",             false, "D-PAD LEFT",         ":/help/dpad_left.svg" },
-	{ "Right",            false, "D-PAD RIGHT",        ":/help/dpad_right.svg" },
-	{ "Start",            true,  "START",              ":/help/button_start.svg" },
-	{ "Select",           true,  "SELECT",             ":/help/button_select.svg" },
-	{ "A",                false, "BUTTON A / EAST",    ":/help/buttons_east.svg" },
-	{ "B",                true,  "BUTTON B / SOUTH",   ":/help/buttons_south.svg" },
-	{ "X",                true,  "BUTTON X / NORTH",   ":/help/buttons_north.svg" },
-	{ "Y",                true,  "BUTTON Y / WEST",    ":/help/buttons_west.svg" },
-	{ "LeftShoulder",     true,  "LEFT SHOULDER",      ":/help/button_l.svg" },
-	{ "RightShoulder",    true,  "RIGHT SHOULDER",     ":/help/button_r.svg" },
-	{ "LeftTrigger",      true,  "LEFT TRIGGER",       ":/help/button_lt.svg" },
-	{ "RightTrigger",     true,  "RIGHT TRIGGER",      ":/help/button_rt.svg" },
-	{ "LeftThumb",        true,  "LEFT THUMB",         ":/help/analog_thumb.svg" },
-	{ "RightThumb",       true,  "RIGHT THUMB",        ":/help/analog_thumb.svg" },
-	{ "LeftAnalogUp",     true,  "LEFT ANALOG UP",     ":/help/analog_up.svg" },
-	{ "LeftAnalogDown",   true,  "LEFT ANALOG DOWN",   ":/help/analog_down.svg" },
-	{ "LeftAnalogLeft",   true,  "LEFT ANALOG LEFT",   ":/help/analog_left.svg" },
-	{ "LeftAnalogRight",  true,  "LEFT ANALOG RIGHT",  ":/help/analog_right.svg" },
-	{ "RightAnalogUp",    true,  "RIGHT ANALOG UP",    ":/help/analog_up.svg" },
-	{ "RightAnalogDown",  true,  "RIGHT ANALOG DOWN",  ":/help/analog_down.svg" },
-	{ "RightAnalogLeft",  true,  "RIGHT ANALOG LEFT",  ":/help/analog_left.svg" },
-	{ "RightAnalogRight", true,  "RIGHT ANALOG RIGHT", ":/help/analog_right.svg" },
-	{ "HotKeyEnable",     true,  "HOTKEY ENABLE",      ":/help/button_hotkey.svg" }
+	{ "Up",               false, "D-PAD UP",           "./help/dpad_up.svg" },
+	{ "Down",             false, "D-PAD DOWN",         "./help/dpad_down.svg" },
+	{ "Left",             false, "D-PAD LEFT",         "./help/dpad_left.svg" },
+	{ "Right",            false, "D-PAD RIGHT",        "./help/dpad_right.svg" },
+	{ "Start",            true,  "START",              "./help/button_start.svg" },
+	{ "Select",           true,  "SELECT",             "./help/button_select.svg" },
+	{ "A",                false, "BUTTON A / EAST",    "./help/buttons_east.svg" },
+	{ "B",                true,  "BUTTON B / SOUTH",   "./help/buttons_south.svg" },
+	{ "X",                true,  "BUTTON X / NORTH",   "./help/buttons_north.svg" },
+	{ "Y",                true,  "BUTTON Y / WEST",    "./help/buttons_west.svg" },
+	{ "LeftShoulder",     true,  "LEFT SHOULDER",      "./help/button_l.svg" },
+	{ "RightShoulder",    true,  "RIGHT SHOULDER",     "./help/button_r.svg" },
+	{ "LeftTrigger",      true,  "LEFT TRIGGER",       "./help/button_lt.svg" },
+	{ "RightTrigger",     true,  "RIGHT TRIGGER",      "./help/button_rt.svg" },
+	{ "LeftThumb",        true,  "LEFT THUMB",         "./help/analog_thumb.svg" },
+	{ "RightThumb",       true,  "RIGHT THUMB",        "./help/analog_thumb.svg" },
+	{ "LeftAnalogUp",     true,  "LEFT ANALOG UP",     "./help/analog_up.svg" },
+	{ "LeftAnalogDown",   true,  "LEFT ANALOG DOWN",   "./help/analog_down.svg" },
+	{ "LeftAnalogLeft",   true,  "LEFT ANALOG LEFT",   "./help/analog_left.svg" },
+	{ "LeftAnalogRight",  true,  "LEFT ANALOG RIGHT",  "./help/analog_right.svg" },
+	{ "RightAnalogUp",    true,  "RIGHT ANALOG UP",    "./help/analog_up.svg" },
+	{ "RightAnalogDown",  true,  "RIGHT ANALOG DOWN",  "./help/analog_down.svg" },
+	{ "RightAnalogLeft",  true,  "RIGHT ANALOG LEFT",  "./help/analog_left.svg" },
+	{ "RightAnalogRight", true,  "RIGHT ANALOG RIGHT", "./help/analog_right.svg" },
+	{ "HotKeyEnable",     true,  "HOTKEY ENABLE",      "./help/button_hotkey.svg" }
 };
 
 //MasterVolUp and MasterVolDown are also hooked up, but do not appear on this screen.
@@ -51,7 +51,7 @@ static const InputConfigStructure GUI_INPUT_CONFIG_LIST[inputCount] =
 #define HOLD_TO_SKIP_MS 1000
 
 GuiInputConfig::GuiInputConfig(Window* window, InputConfig* target, bool reconfigureAll, const std::function<void()>& okCallback) : GuiComponent(window),
-	mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 7)),
+	mBackground(window, "./frame.png"), mGrid(window, Vector2i(1, 7)),
 	mTargetConfig(target), mHoldingInput(false), mBusyAnim(window)
 {
 	LOG(LogInfo) << "Configuring device " << target->getDeviceId() << " (" << target->getDeviceName() << ").";

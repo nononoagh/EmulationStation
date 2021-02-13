@@ -15,8 +15,8 @@
 // always
 // * press a -> open full list
 
-#define CHECKED_PATH ":/checkbox_checked.svg"
-#define UNCHECKED_PATH ":/checkbox_unchecked.svg"
+#define CHECKED_PATH "./checkbox_checked.svg"
+#define UNCHECKED_PATH "./checkbox_unchecked.svg"
 
 template<typename T>
 class OptionListComponent : public GuiComponent
@@ -148,14 +148,14 @@ public:
 
 		if(mMultiSelect)
 		{
-			mRightArrow.setImage(":/arrow.svg");
+			mRightArrow.setImage("./arrow.svg");
 			addChild(&mRightArrow);
 		}else{
-			mLeftArrow.setImage(":/option_arrow.svg");
+			mLeftArrow.setImage("./option_arrow.svg");
 			mLeftArrow.setFlipX(true);
 			addChild(&mLeftArrow);
 
-			mRightArrow.setImage(":/option_arrow.svg");
+			mRightArrow.setImage("./option_arrow.svg");
 			addChild(&mRightArrow);
 		}
 

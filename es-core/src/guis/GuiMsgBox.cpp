@@ -9,7 +9,7 @@ GuiMsgBox::GuiMsgBox(Window* window, const std::string& text,
 	const std::string& name1, const std::function<void()>& func1,
 	const std::string& name2, const std::function<void()>& func2,
 	const std::string& name3, const std::function<void()>& func3) : GuiComponent(window),
-	mBackground(window, ":/frame.png"), mGrid(window, Vector2i(1, 2))
+	mBackground(window, "./frame.png"), mGrid(window, Vector2i(1, 2))
 {
 	float width = Renderer::getScreenWidth() * 0.6f; // max width
 	float minWidth = Renderer::getScreenWidth() * 0.3f; // minimum width

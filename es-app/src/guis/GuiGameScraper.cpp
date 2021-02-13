@@ -9,7 +9,7 @@
 
 GuiGameScraper::GuiGameScraper(Window* window, ScraperSearchParams params, std::function<void(const ScraperSearchResult&)> doneFunc) : GuiComponent(window),
 	mGrid(window, Vector2i(1, 7)),
-	mBox(window, ":/frame.png"),
+	mBox(window, "./frame.png"),
 	mSearchParams(params),
 	mClose(false)
 {

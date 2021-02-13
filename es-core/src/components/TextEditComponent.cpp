@@ -10,7 +10,7 @@
 #define CURSOR_REPEAT_SPEED 28 // lower is faster
 
 TextEditComponent::TextEditComponent(Window* window) : GuiComponent(window),
-	mBox(window, ":/textinput_ninepatch.png"), mFocused(false),
+	mBox(window, "./textinput_ninepatch.png"), mFocused(false),
 	mScrollOffset(0.0f, 0.0f), mCursor(0), mEditing(false), mFont(Font::get(FONT_SIZE_MEDIUM, FONT_PATH_LIGHT)),
 	mCursorRepeatDir(0)
 {
@@ -24,13 +24,13 @@ TextEditComponent::TextEditComponent(Window* window) : GuiComponent(window),
 void TextEditComponent::onFocusGained()
 {
 	mFocused = true;
-	mBox.setImagePath(":/textinput_ninepatch_active.png");
+	mBox.setImagePath("./textinput_ninepatch_active.png");
 }
 
 void TextEditComponent::onFocusLost()
 {
 	mFocused = false;
-	mBox.setImagePath(":/textinput_ninepatch.png");
+	mBox.setImagePath("./textinput_ninepatch.png");
 }
 
 void TextEditComponent::onSizeChanged()
